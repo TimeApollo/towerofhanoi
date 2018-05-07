@@ -14,6 +14,7 @@ handleClick = function (event) {
     console.log( tower );
     if ( currentClick === "clickGrab" ) {
         if ( tower.childElementCount === 0 ) {
+            info.textContent = "Pick Piece"
             return;
         }
         let topDisk = tower.lastElementChild;
