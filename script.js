@@ -54,6 +54,9 @@ function reset() {
     startTower.appendChild(document.getElementById("three"));
     startTower.appendChild(document.getElementById("two"));
     startTower.appendChild(document.getElementById("one"));
+    currentClick = "clickGrab";
+    nextClick = "clickPlace";
+    info.textContent = "Pick Piece";
 }
 
 document.getElementById("reset").addEventListener('click', reset);
