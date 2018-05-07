@@ -7,22 +7,23 @@ let towers = document.querySelectorAll("section");
 let topDiskHolder = document.getElementById("topDiskHolder");
 let info = document.getElementById("info");
 info.textContent = "Pick Piece";
+
 handleClick = function (event) {
     info.textContent = "";
     let tower = event.currentTarget;
-    console.log(tower);
-    if (currentClick === "clickGrab") {
-        if (tower.childElementCount === 0) {
+    console.log( tower );
+    if ( currentClick === "clickGrab" ) {
+        if ( tower.childElementCount === 0 ) {
             return;
         }
         let topDisk = tower.lastElementChild;
-        topDiskHolder.appendChild(topDisk);
+        topDiskHolder.appendChild( topDisk );
         nextClick = "clickPlace";
         info.textContent = "Place Piece";
         currentClick = nextClick;
         nextClick = "clickGrab";
     } else {
-        if (tower.childElementCount === 0) {
+        if ( tower.childElementCount === 0 ) {
             tower.appendChild(topDiskHolder.lastElementChild);
             info.textContent = "Pick Piece";
             currentClick = nextClick;
@@ -54,7 +55,9 @@ function reset() {
     startTower.appendChild(document.getElementById("two"));
     startTower.appendChild(document.getElementById("one"));
 }
-document.getElementById("reset").addEventListener('click', reset)
+
+document.getElementById("reset").addEventListener('click', reset);
+
 for (let i = 0; i < towers.length; i++) {
     towers[i].addEventListener('click', handleClick)
 };
